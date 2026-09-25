@@ -9,28 +9,12 @@
  * }
  */
 class Solution {
-    public int length(ListNode list){
-        int len=0;
-        ListNode temp=list;
-        while(temp!=null){
-            temp=temp.next;
-            len++;
-        }
-        return len;
-    }
+    
     public ListNode mergeTwoLists(ListNode list1, ListNode list2) {
         ListNode i=list1;
         ListNode j=list2;
         ListNode dummy =new ListNode(-1);
         ListNode k=dummy;
-        int size1=length(list1);
-        int size2=length(list2);
-        if(size1>size2){
-           k.next=list2;
-        }
-        else{
-            k.next=list1;
-        }
 
         while(i!=null && j!=null){
             if(i.val>j.val){
