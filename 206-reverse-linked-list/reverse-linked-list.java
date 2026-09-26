@@ -22,11 +22,11 @@ class Solution {
         // }
         // return prev;
         if(head==null || head.next==null) return head;
-        ListNode temp=head;
-        ListNode a=temp.next;
-        temp.next=null;
+        
+        ListNode a=head.next;
+        head.next=null;
         ListNode b=reverseList(a);
-        a.next=temp;
+        a.next=head;
         return b;
     }
 }
