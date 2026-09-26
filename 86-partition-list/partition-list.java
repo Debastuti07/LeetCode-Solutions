@@ -31,8 +31,7 @@ class Solution {
         }
        
         t2.next=null;
-        // d1=d1.next;
-        // d2=d2.next;
+        
         t1.next=d2.next;
 
         return d1.next;
