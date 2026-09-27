@@ -11,17 +11,19 @@
 class Solution {
      public ListNode reverseList(ListNode head) {
         
-        if(head==null || head.next==null) return head;
-        ListNode temp=head;
-        ListNode a=temp.next;
-        temp.next=null;
-        ListNode b=reverseList(a);
-        a.next=temp;
-        return b;
+         ListNode prev = null;
+        ListNode curr = head;
+
+        while (curr != null) {
+            ListNode next = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = next;
+        }
+
+        return prev;
     }
     public int pairSum(ListNode head) {
-        // if(head==null || head.next==null) return true;
-       
        ListNode fast=head;
         ListNode slow=head;
         while(fast!=null && fast.next!=null){
